@@ -23,7 +23,7 @@ Original PDF copies of these documents are kept in [`data/raw/`](data/raw) for t
 | Step | Description | Status |
 |---|---|---|
 | 1 | Data Foundation + Full Income Statement & Cash Flow Statement — segment & category sales/UTOP (FY2021–FY2024), H1/H2 phasing, and the full line-by-line Consolidated Income Statement and Statement of Cash Flows, all built on Nestlé's actuals | ✅ Done |
-| 2 | Driver-based FY2025 Budget Model — full line-item P&L + Cash Flow (~40 assumptions), not a simplified bridge | ✅ Done |
+| 2 | Driver-based FY2025 Budget Model — full line-item P&L + Cash Flow (~40 assumptions) | ✅ Done |
 | 3 | Variance Analysis (Actual vs Budget, RIG/Pricing split) | 🔜 Next |
 | 4 | Power BI Dashboard | ⬜ Not started |
 | 5 | Business Case (strategic decision + sensitivity) | ⬜ Not started |
@@ -49,7 +49,7 @@ Sheets:
 - **Income_Statement** — Full Consolidated Income Statement, line by line (Sales, Other revenue, Cost of goods sold, Distribution expenses, Marketing & administration expenses, R&D costs, Other trading/operating income & expenses, Financial income/expense, Income from associates & joint ventures, Taxes, non-controlling interests), FY2021–FY2024 actuals, sourced from Nestlé's full Financial Statements documents. Every subtotal (UTOP, Trading Operating Profit, Operating Profit, Profit Before Taxes, Profit for the Year, Net Profit) is computed by formula from the disclosed line items above it — never hardcoded.
 - **Cash_Flow_Statement** — Full Consolidated Statement of Cash Flows, line by line across Operating, Investing and Financing activities, plus the cash reconciliation and a Free Cash Flow memo, FY2021–FY2024 actuals. Every subtotal (Cash Generated from Operations, Operating/Investing/Financing Cash Flow) is computed by formula.
 - **Assumptions_FY2025** — ~40 line-item FY2025 budget drivers covering the full Income Statement and Cash Flow Statement (organic growth, FX, cost ratios, other trading/operating items, financial income/expense, associates income, tax rate, NCI, D&A, impairment, working capital, capex, investing and financing lines), each cited to Nestlé's own FY2025 guidance where available, or flagged as an explicit own-assumption with rationale where not. Yellow cells are the editable levers.
-- **Budget_FY2025_PL_CF** — Full-detail FY2025 Budget vs FY2024 Actual, built at the same line-item level as `Income_Statement` and `Cash_Flow_Statement` (not a simplified bridge), fully driven by `Assumptions_FY2025` and linked directly to `Income_Statement`/`Cash_Flow_Statement` for the FY2024 actuals column. Built entirely from guidance Nestlé disclosed on 13-Feb-2025 — **before** FY2025 actual results were known, deliberately without hindsight, so the eventual gap to real FY2025 results (Step 3) is a genuine variance, not a fitted one.
+- **Budget_FY2025_PL_CF** — Full-detail FY2025 Budget vs FY2024 Actual, built at the same line-item level as `Income_Statement` and `Cash_Flow_Statement`, fully driven by `Assumptions_FY2025` and linked directly to `Income_Statement`/`Cash_Flow_Statement` for the FY2024 actuals column. Built entirely from guidance Nestlé disclosed on 13-Feb-2025 — **before** FY2025 actual results were known, deliberately without hindsight, so the eventual gap to real FY2025 results (Step 3) is a genuine variance, not a fitted one.
 
 **Conventions:** blue text = hardcoded inputs sourced from the press releases above · black text = formulas · green text = cross-sheet links · yellow fill = editable budget assumptions. All formulas recalculate cleanly (0 errors).
 
