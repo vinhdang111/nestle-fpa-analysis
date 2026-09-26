@@ -16,6 +16,8 @@ All figures are sourced directly from Nestlé's official Investor Relations pres
 - [2024 Financial Statements](https://www.nestle.com/sites/default/files/2025-02/2024-financial-statements-en.pdf) (13 Feb 2025) — full Consolidated Income Statement & Statement of Cash Flows, FY2024 vs FY2023
 - [2022 Financial Statements](https://www.nestle.com/sites/default/files/2023-02/2022-financial-statements-en.pdf) (16 Feb 2023) — full Consolidated Income Statement & Statement of Cash Flows, FY2022 vs FY2021
 
+Original PDF copies of these documents are kept in [`data/raw/`](data/raw) for traceability/reproducibility.
+
 ## Project status
 
 | Step | Description | Status |
@@ -31,7 +33,7 @@ All figures are sourced directly from Nestlé's official Investor Relations pres
 
 | Folder | Contents |
 |---|---|
-| `data/` | Raw/processed data exports, if split out of Excel later |
+| `data/raw/` | Raw source PDFs from Nestlé's Investor Relations site (press releases & full Financial Statements) used to build the Excel workbook — see Data sources above |
 | `excel_model/` | Excel workbook(s) — data foundation, P&L/CF, budget model |
 | `powerbi/` | Power BI `.pbix` file and published dashboard link |
 | `analysis/` | Variance analysis write-ups, business case notes |
