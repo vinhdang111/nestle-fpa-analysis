@@ -26,7 +26,6 @@ Original PDF copies of these documents are kept in [`data/raw/`](data/raw) for t
 | 3 | Variance Analysis (Actual vs Budget, RIG/Pricing split) | 🔜 Next |
 | 4 | Power BI Dashboard | ⬜ Not started |
 | 5 | Business Case (strategic decision + sensitivity) | ⬜ Not started |
-| 6 | Packaging & portfolio embed | ⬜ Not started |
 
 ## Repo Structure
 
