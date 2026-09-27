@@ -26,8 +26,8 @@ Original PDF copies of these documents are kept in [`data/raw/`](data/raw) for t
 | 1 | Data Foundation + Full Income Statement & Cash Flow Statement — segment & category sales/UTOP (FY2021–FY2024), and the full line-by-line Consolidated Income Statement and Statement of Cash Flows, all built on Nestlé's actuals | ✅ Done |
 | 2 | Driver-based FY2025 Budget Model — full line-item P&L + Cash Flow (~40 assumptions) under Adverse / Base / Favorable scenarios | ✅ Done |
 | 3 | Variance Analysis — FY2025 Actual vs the Base Budget, with a RIG/Pricing/Net M&A/FX sales bridge, full Income Statement & Cash Flow variance, where Actual landed within the scenario range, and a backtest of each flexed driver | ✅ Done |
-| 4 | Power BI Dashboard | 🔜 Next |
-| 5 | Business Case (strategic decision + sensitivity) | ⬜ Not started |
+| 4 | Power BI Dashboard — four report pages following the project timeline: FY2021–FY2024 Overview, FY2025 Budget Scenarios, Variance Analysis and Backtest | ✅ Done |
+| 5 | Business Case (strategic decision + sensitivity) | 🔜 Next |
 
 ## Repo Structure
 
@@ -35,7 +35,7 @@ Original PDF copies of these documents are kept in [`data/raw/`](data/raw) for t
 |---|---|
 | `data/raw/` | Raw source PDFs from Nestlé's Investor Relations site (press releases & full Financial Statements) used to build the Excel workbook — see Data sources above |
 | `excel_model/` | Excel workbook(s) — data foundation, P&L/CF, budget model |
-| `powerbi/` | Power BI `.pbix` file and published dashboard link |
+| `powerbi/` | Power BI Project (`.pbip`): semantic model (TMDL) and report (PBIR) as text files, plus the exported data as CSV — see [`powerbi/README.md`](powerbi/README.md) |
 | `analysis/` | Variance analysis write-ups, business case notes |
 
 ## Excel workbook — `excel_model/Nestle_Data_Foundation.xlsx`
@@ -48,7 +48,6 @@ Sheets:
 - **1. Category_Data** — Sales & UTOP by product category (7 categories), FY2021–FY2024
 - **1. Income_Statement** — Full Consolidated Income Statement, line by line (Sales, Other revenue, Cost of goods sold, Distribution expenses, Marketing & administration expenses, R&D costs, Other trading/operating income & expenses, Financial income/expense, Income from associates & joint ventures, Taxes, non-controlling interests), FY2021–FY2024 actuals, sourced from Nestlé's full Financial Statements documents. Every subtotal (UTOP, Trading Operating Profit, Operating Profit, Profit Before Taxes, Profit for the Year, Net Profit) is computed by formula from the disclosed line items above it — never hardcoded.
 - **1. Cash_Flow_Statement** — Full Consolidated Statement of Cash Flows, line by line across Operating, Investing and Financing activities, plus the cash reconciliation and a Free Cash Flow memo, FY2021–FY2024 actuals. Every subtotal (Cash Generated from Operations, Operating/Investing/Financing Cash Flow) is computed by formula.
-- **1. Overview_Analysis** — two additional views built entirely by formula from `1. Segment_Data`, `1. Income_Statement` and `2. Budget_FY2025_PL_CF`: a Group-level Sales Growth Bridge (RIG / Pricing / Net M&A / FX) for FY2022, FY2024 and the FY2025 Budget, and a Cost Structure & Margin trend as % of Sales, FY2021–FY2024 Actual plus FY2025 Budget. Each includes a long-format summary table.
 - **2. Assumptions_FY2025** — ~40 line-item FY2025 budget drivers covering the full Income Statement and Cash Flow Statement, in three columns: **Adverse / Base / Favorable**. Base follows Nestlé's own FY2025 guidance where available, or an explicit own-assumption with documented rationale where not. Adverse and Favorable flex ten key drivers (RIG, FX, COGS %, Marketing & Admin %, other trading items, net financial expense, associates income, tax rate, working capital, capex) using ranges sized from Nestlé's FY2021–FY2024 history; every other driver is held at Base. Yellow cells are the editable levers.
 - **2. Budget_FY2025_PL_CF** — Full-detail FY2025 Budget under the Adverse, Base and Favorable scenarios, side by side with FY2024 Actual, built at the same line-item level as `1. Income_Statement` and `1. Cash_Flow_Statement` and fully driven by `2. Assumptions_FY2025`. Built entirely from information Nestlé disclosed on 13-Feb-2025 — **before** FY2025 actual results were known, deliberately without hindsight, so the gap to real FY2025 results (Step 3) is a genuine variance, not a fitted one. The Base scenario is the plan Step 3 measures against.
 - **3. Variance_Analysis** — FY2025 Actual versus the Base Budget: (A) a Group Sales Growth Bridge decomposing Budget vs Actual into RIG (Real Internal Growth), Pricing, Organic Growth, Net M&A and FX — the same framework Nestlé uses in its own disclosures; (B) a full line-item Income Statement variance (CHF m and %); (C) a full line-item Cash Flow variance; (D) where Actual landed versus the Adverse / Base / Favorable scenarios; (E) a backtest of each flexed driver against its scenario range; and (F) written commentary on what drove the variance. All FY2025 Actual figures are hardcoded (blue) inputs sourced from Nestlé's FY2025 Full-Year Results press release and Financial Statements (19-Feb-2026).
@@ -65,11 +64,23 @@ Sheets:
 - The FY2025 Budget's ~40 assumptions are a mix of Nestlé's own disclosed guidance (organic sales growth, resulting UTOP margin "at or above 16.0%", no new share buyback) and explicit own-assumptions grounded in historical ratios/trends where the company gave no specific figure (e.g. cost ratios, capex intensity, working capital, financing flows) — every assumption's source is documented in the `2. Assumptions_FY2025` sheet.
 - The Budget's ending cash balance rises materially versus FY2024 (CHF 5,558m → CHF 9,240m) mainly because two large FY2024 one-off outflows — the CHF 4,678m share buyback and ~CHF 2,130m of M&A/treasury-investment outflows — are assumed not to repeat in FY2025, per guidance. Operating Cash Flow itself is budgeted slightly *below* FY2024 (CHF 15,666m vs CHF 16,675m); this is flagged in-sheet so the cash build isn't mistaken for an operating improvement.
 - The Adverse and Favorable scenarios move all ten flexed drivers together, so they form a stress range around the Base plan rather than probability-weighted forecasts. In the Step 3 backtest, FY2025 Net Profit landed between Adverse and Base, Sales came in just below Adverse, and 6 of the 10 flexed drivers fell outside their Adverse–Favorable ranges (FX, COGS, other trading items and associates income worse than Adverse; Marketing & Admin and capex better than Favorable).
-- In `1. Overview_Analysis`, the Sales Growth Bridge's "Reported Sales Growth" (RIG + Pricing + Net M&A + FX) is off by a few basis points from the actual reported YoY growth in `1. Segment_Data` — this is expected rounding noise from Nestlé's own disclosed bridge components (each rounded to one decimal place), not a formula error; a direct check row is included in-sheet.
+
+## Power BI dashboard — `powerbi/`
+
+An interactive dashboard built on the Excel workbook above, saved as a Power BI Project (`.pbip`) so every table, DAX measure and visual is stored as reviewable text. To open it, use Power BI Desktop: open `powerbi/Nestle_FPA_Dashboard.pbip`, then click **Refresh** (the data is embedded in the model, so no file paths or credentials are needed).
+
+| Page | What it shows |
+|---|---|
+| **1. Overview** | FY2021–FY2024 actuals only: sales by geographic Zone on a map, sales by product category, global businesses, and sales with net profit margin over time; year buttons switch the map, donut and table between years |
+| **2. Budget Scenarios** | The FY2025 Budget: Base-case KPIs with the Adverse–Favorable range, the three scenarios vs FY2024 Actual, the ten flexed assumptions, and the income statement by scenario |
+| **3. Variance Analysis** | FY2025 Actual vs the Base Budget: KPI cards, income statement variance, a net profit bridge from Budget to Actual by line, and the sales growth bridge (RIG / Pricing / Net M&A / FX) |
+| **4. Backtest** | How good the budget was: drivers outside their tested range, each scenario vs Actual for sales, net profit and free cash flow, and a colour-coded driver backtest |
+
+The model is a star schema (11 tables, 79 DAX measures). Every value is exported from the recalculated workbook, with automatic checks that the FY2024 figures reconcile line by line and that the net profit bridge sums exactly to the FY2025 net profit variance. Details are in [`powerbi/README.md`](powerbi/README.md).
 
 ## Next step
 
-Step 4 — Power BI Dashboard: an interactive dashboard built on the Excel model above (Overview, Budget vs Actual variance, the Adverse / Base / Favorable scenario range, and segment/category views).
+Step 5 — Business Case: a strategic decision evaluated with a financial case and sensitivity analysis, built on the same data.
 
 ## Disclaimer
 
