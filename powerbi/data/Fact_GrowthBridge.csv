@@ -1,0 +1,25 @@
+Period,PeriodSort,Component,ComponentSort,IsComponent,Value
+FY2022,1,RIG,1,1,0.001
+FY2022,1,Pricing,2,1,0.082
+FY2022,1,Net M&A,3,1,0.011
+FY2022,1,FX,4,1,-0.009
+FY2022,1,Organic growth,5,0,0.083
+FY2022,1,Reported sales growth,6,0,0.084237
+FY2024,2,RIG,1,1,0.008
+FY2024,2,Pricing,2,1,0.015
+FY2024,2,Net M&A,3,1,-0.003
+FY2024,2,FX,4,1,-0.037
+FY2024,2,Organic growth,5,0,0.022
+FY2024,2,Reported sales growth,6,0,-0.017678
+FY2025 Budget (Base),3,RIG,1,1,0.015
+FY2025 Budget (Base),3,Pricing,2,1,0.015
+FY2025 Budget (Base),3,Net M&A,3,1,0.0
+FY2025 Budget (Base),3,FX,4,1,0.0
+FY2025 Budget (Base),3,Organic growth,5,0,0.03
+FY2025 Budget (Base),3,Reported sales growth,6,0,0.03
+FY2025 Actual,4,RIG,1,1,0.008
+FY2025 Actual,4,Pricing,2,1,0.028
+FY2025 Actual,4,Net M&A,3,1,0.001
+FY2025 Actual,4,FX,4,1,-0.057
+FY2025 Actual,4,Organic growth,5,0,0.035
+FY2025 Actual,4,Reported sales growth,6,0,-0.020404

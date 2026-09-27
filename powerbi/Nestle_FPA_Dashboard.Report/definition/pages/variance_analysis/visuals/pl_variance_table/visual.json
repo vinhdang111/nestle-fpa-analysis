@@ -1,0 +1,237 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "pl_variance_table",
+  "position": {
+    "x": 24.316109422492403,
+    "y": 196.47416413373861,
+    "z": 12000,
+    "height": 507.72036474164133,
+    "width": 506.74772036474167,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_LineItem"
+                    }
+                  },
+                  "Property": "LineItem"
+                }
+              },
+              "queryRef": "Dim_LineItem.LineItem",
+              "nativeQueryRef": "LineItem",
+              "displayName": "Line item"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PL"
+                    }
+                  },
+                  "Property": "FY25 Budget (Base)"
+                }
+              },
+              "queryRef": "Fact_PL.FY25 Budget (Base)",
+              "nativeQueryRef": "FY25 Budget (Base)",
+              "displayName": "Budget (Base)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PL"
+                    }
+                  },
+                  "Property": "FY25 Actual"
+                }
+              },
+              "queryRef": "Fact_PL.FY25 Actual",
+              "nativeQueryRef": "FY25 Actual",
+              "displayName": "Actual"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PL"
+                    }
+                  },
+                  "Property": "FY25 Variance"
+                }
+              },
+              "queryRef": "Fact_PL.FY25 Variance",
+              "nativeQueryRef": "FY25 Variance",
+              "displayName": "Variance"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PL"
+                    }
+                  },
+                  "Property": "FY25 Variance %"
+                }
+              },
+              "queryRef": "Fact_PL.FY25 Variance %",
+              "nativeQueryRef": "FY25 Variance %",
+              "displayName": "Variance %"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_LineItem"
+                  }
+                },
+                "Property": "LineItem"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Income statement variance, FY2025'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#63513D'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a7ecfe38dd341d70c623",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_LineItem"
+              }
+            },
+            "Property": "LineItem"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d6a9741461aaa1773322",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_PL"
+              }
+            },
+            "Property": "FY25 Budget (Base)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cb4ce1a7c7ab0caaabb2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_PL"
+              }
+            },
+            "Property": "FY25 Actual"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0d526f1b128b717043dd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_PL"
+              }
+            },
+            "Property": "FY25 Variance"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8d9d3ceb9b43044725a0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_PL"
+              }
+            },
+            "Property": "FY25 Variance %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

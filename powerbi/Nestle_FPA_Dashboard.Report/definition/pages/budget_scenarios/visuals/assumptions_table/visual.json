@@ -1,0 +1,223 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "assumptions_table",
+  "position": {
+    "x": 71.00303951367782,
+    "y": 462.00607902735567,
+    "z": 13000,
+    "height": 242.18844984802433,
+    "width": 497.02127659574472,
+    "tabOrder": 13000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Drivers"
+                    }
+                  },
+                  "Property": "ShortName"
+                }
+              },
+              "queryRef": "Fact_Drivers.ShortName",
+              "nativeQueryRef": "ShortName",
+              "displayName": "Driver"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Drivers"
+                    }
+                  },
+                  "Property": "Adverse"
+                }
+              },
+              "queryRef": "Fact_Drivers.Adverse",
+              "nativeQueryRef": "Adverse",
+              "displayName": "Adverse"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Drivers"
+                    }
+                  },
+                  "Property": "Base"
+                }
+              },
+              "queryRef": "Fact_Drivers.Base",
+              "nativeQueryRef": "Base",
+              "displayName": "Base"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Drivers"
+                    }
+                  },
+                  "Property": "Favorable"
+                }
+              },
+              "queryRef": "Fact_Drivers.Favorable",
+              "nativeQueryRef": "Favorable",
+              "displayName": "Favorable"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Drivers"
+                  }
+                },
+                "Property": "ShortName"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Key assumptions flexed across scenarios (all other drivers held at Base)'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#63513D'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "53eff348054c03d4ea94",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Drivers"
+              }
+            },
+            "Property": "ShortName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "043a98316004b7201d51",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Drivers"
+              }
+            },
+            "Property": "Adverse"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b5df114f8a1be657b87e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Drivers"
+              }
+            },
+            "Property": "Base"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7611e170e00e82658176",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Drivers"
+              }
+            },
+            "Property": "Favorable"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

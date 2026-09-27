@@ -1,0 +1,152 @@
+table Fact_Drivers
+	lineageTag: 5a4d2188-be58-5136-8204-e25a907d7fe1
+
+	measure 'Range Score' = SUM(Fact_Drivers[RangeScore])
+		formatString: 0%;-0%;0%
+		lineageTag: bc026ecd-2c69-51e2-b2fd-a33c58886979
+
+	measure 'Range Score Color' = VAR s = [Range Score] RETURN IF(s > 1, "#B5543C", IF(s < -1, "#6F8B4E", "#B08D57"))
+		displayFolder: Formatting
+		lineageTag: 0f294d74-1d88-583e-acd0-bfb142bf2299
+
+	measure 'Result Color' = SWITCH(SELECTEDVALUE(Fact_Drivers[Result]), "Worse than Adverse", "#EFCFC4", "Better than Favorable", "#D8E3C6", "#FFFCF4")
+		displayFolder: Formatting
+		lineageTag: 6552cda6-867c-5f31-b4f4-3438227922a8
+
+	measure 'Drivers Outside Range' = FORMAT(CALCULATE(COUNTROWS(Fact_Drivers), Fact_Drivers[Result] <> "Within scenario range"), "0") & " of " & FORMAT(COUNTROWS(Fact_Drivers), "0")
+		displayFolder: KPI
+		lineageTag: 7bdedf85-c300-573a-bfb7-50317314fe1d
+
+	measure 'Drivers Worse than Adverse' = CALCULATE(COUNTROWS(Fact_Drivers), Fact_Drivers[Result] = "Worse than Adverse") + 0
+		formatString: 0
+		displayFolder: KPI
+		lineageTag: 110dc2ef-39e0-5bf6-ad35-f9b3546e55d5
+
+	measure 'Drivers Better than Favorable' = CALCULATE(COUNTROWS(Fact_Drivers), Fact_Drivers[Result] = "Better than Favorable") + 0
+		formatString: 0
+		displayFolder: KPI
+		lineageTag: 1523f130-766b-5471-be75-c1c591ef5e30
+
+	measure 'Drivers Within Range' = CALCULATE(COUNTROWS(Fact_Drivers), Fact_Drivers[Result] = "Within scenario range") + 0
+		formatString: 0
+		displayFolder: KPI
+		lineageTag: 63500e18-756c-5626-9caa-6b87d8caa4ec
+
+	column Driver
+		dataType: string
+		lineageTag: cc583108-e0da-501d-bce4-57520504d1de
+		summarizeBy: none
+		sourceColumn: Driver
+		sortByColumn: DriverSort
+
+		annotation SummarizationSetBy = User
+
+	column ShortName
+		dataType: string
+		lineageTag: b7495ec3-7f16-5d92-9802-3cfecd6d8bca
+		summarizeBy: none
+		sourceColumn: ShortName
+		sortByColumn: DriverSort
+
+		annotation SummarizationSetBy = User
+
+	column DriverSort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6853268a-82fc-5889-92c4-a124986417f3
+		summarizeBy: none
+		sourceColumn: DriverSort
+
+		annotation SummarizationSetBy = User
+
+	column Unit
+		dataType: string
+		lineageTag: 5380edaa-2e0e-5062-a98b-70cb39e8a41d
+		summarizeBy: none
+		sourceColumn: Unit
+
+		annotation SummarizationSetBy = User
+
+	column Adverse
+		dataType: string
+		lineageTag: e11018b2-ef9a-5b8c-a427-aa6724800c62
+		summarizeBy: none
+		sourceColumn: Adverse
+
+		annotation SummarizationSetBy = User
+
+	column Base
+		dataType: string
+		lineageTag: a4b61130-cb0a-5a92-8c27-e13e53aa5138
+		summarizeBy: none
+		sourceColumn: Base
+
+		annotation SummarizationSetBy = User
+
+	column Favorable
+		dataType: string
+		lineageTag: 53da559e-8af7-525e-9e4c-f288ad9ed8f1
+		summarizeBy: none
+		sourceColumn: Favorable
+
+		annotation SummarizationSetBy = User
+
+	column 'FY2025 Actual'
+		dataType: string
+		lineageTag: 6296e1e8-3dc5-53af-b4ae-7ecc3ede298c
+		summarizeBy: none
+		sourceColumn: FY2025 Actual
+
+		annotation SummarizationSetBy = User
+
+	column 'Actual vs Base'
+		dataType: string
+		lineageTag: bd6a4085-b58e-5e16-8f1a-aebf5cce65b0
+		summarizeBy: none
+		sourceColumn: Actual vs Base
+
+		annotation SummarizationSetBy = User
+
+	column Result
+		dataType: string
+		lineageTag: b00ae27b-199f-5f17-8670-e86b23bbc8e1
+		summarizeBy: none
+		sourceColumn: Result
+
+		annotation SummarizationSetBy = User
+
+	column RangeScore
+		dataType: double
+		isHidden
+		formatString: 0.00
+		lineageTag: a67ab6c8-ea9d-5a34-b80c-50b7e5290163
+		summarizeBy: none
+		sourceColumn: RangeScore
+
+		annotation SummarizationSetBy = User
+
+	partition Fact_Drivers = m
+		mode: import
+		source =
+				let
+					Source = #table(
+						type table [Driver = text, ShortName = text, DriverSort = Int64.Type, Unit = text, Adverse = text, Base = text, Favorable = text, #"FY2025 Actual" = text, #"Actual vs Base" = text, Result = text, RangeScore = number],
+						{
+							{"Real Internal Growth (RIG) — volume/mix", "RIG (volume/mix)", 1, "%", "0.5%", "1.5%", "2.5%", "0.8%", "-70 bps", "Within scenario range", 0.7},
+							{"Foreign Exchange (FX) Impact", "FX impact", 2, "%", "-4.0%", "0.0%", "2.0%", "-5.7%", "-570 bps", "Worse than Adverse", 1.425},
+							{"Cost of Goods Sold (% of Sales)", "COGS % of sales", 3, "%", "53.9%", "52.9%", "51.9%", "54.4%", "+151 bps", "Worse than Adverse", 1.512784},
+							{"Marketing & Administration Expenses (% of Sales)", "Marketing & admin % of sales", 4, "%", "21.4%", "20.9%", "20.4%", "20.0%", "-92 bps", "Better than Favorable", -1.833523},
+							{"Other Trading Items, net (% of Sales)", "Other trading items % of sales", 5, "%", "-1.9%", "-1.4%", "-0.9%", "-1.9%", "-52 bps", "Worse than Adverse", 1.030596},
+							{"Net Financial Expense Growth (vs FY2024)", "Net financial expense growth", 6, "%", "15.0%", "5.0%", "-5.0%", "2.8%", "-224 bps", "Within scenario range", -0.223906},
+							{"Income from Associates & JVs Growth", "Associates income growth", 7, "%", "-2.0%", "8.0%", "18.0%", "-8.5%", "-1,649 bps", "Worse than Adverse", 1.648679},
+							{"Effective Tax Rate", "Effective tax rate", 8, "%", "26.0%", "24.0%", "22.0%", "24.6%", "+56 bps", "Within scenario range", 0.277928},
+							{"Working Capital & Other Operating Movements (CHF m)", "Working capital (CHF m)", 9, "CHF m", "-1,000", "0", "1,000", "-319", "-319", "Within scenario range", 0.319},
+							{"Capital Expenditure (% of Sales)", "Capex % of sales", 10, "%", "6.7%", "6.2%", "5.7%", "5.1%", "-114 bps", "Better than Favorable", -2.282668}
+						}
+					)
+				in
+					Source
+
+	annotation PBI_ResultType = Table
+

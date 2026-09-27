@@ -1,0 +1,29 @@
+Label,LabelSort,Metric,MetricSort,Value
+FY2024 Actual,1,Sales,1,91354.0
+FY2025 Adverse,2,Sales,1,89526.92
+FY2025 Base,3,Sales,1,94094.62
+FY2025 Favorable,4,Sales,1,96835.24
+FY2024 Actual,1,UTOP,2,15704.0
+FY2025 Adverse,2,UTOP,2,13518.56492
+FY2025 Base,3,UTOP,2,15619.70692
+FY2025 Favorable,4,UTOP,2,17527.17844
+FY2024 Actual,1,UTOP margin,3,0.171903
+FY2025 Adverse,2,UTOP margin,3,0.151
+FY2025 Base,3,UTOP margin,3,0.166
+FY2025 Favorable,4,UTOP margin,3,0.181
+FY2024 Actual,1,Operating profit,4,14724.0
+FY2025 Adverse,2,Operating profit,4,11638.4996
+FY2025 Base,3,Operating profit,4,14114.193
+FY2025 Favorable,4,Operating profit,4,16461.9908
+FY2024 Actual,1,Net profit,5,10884.0
+FY2025 Adverse,2,Net profit,5,8349.882562
+FY2025 Base,3,Net profit,5,10607.519086
+FY2025 Favorable,4,Net profit,5,12870.229341
+FY2024 Actual,1,Operating cash flow,6,16675.0
+FY2025 Adverse,2,Operating cash flow,6,12125.396101
+FY2025 Base,3,Operating cash flow,6,15665.690335
+FY2025 Favorable,4,Operating cash flow,6,19103.600016
+FY2024 Actual,1,Free cash flow (derived),7,10712.0
+FY2025 Adverse,2,Free cash flow (derived),7,5768.984781
+FY2025 Base,3,Free cash flow (derived),7,9455.445415
+FY2025 Favorable,4,Free cash flow (derived),7,13196.650376

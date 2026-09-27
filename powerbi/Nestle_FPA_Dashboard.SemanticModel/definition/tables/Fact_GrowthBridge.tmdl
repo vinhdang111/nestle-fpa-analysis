@@ -1,0 +1,115 @@
+table Fact_GrowthBridge
+	lineageTag: b8c59e6a-4b92-5de4-bb9a-fcbbfa871e7b
+
+	measure 'Bridge Value' = CALCULATE(SUM(Fact_GrowthBridge[Value]), Fact_GrowthBridge[IsComponent] = 1)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: c9a1e6cc-5f01-5442-a0c8-b825261ccaab
+
+	measure 'Bridge Value FY25' = CALCULATE([Bridge Value], KEEPFILTERS(Fact_GrowthBridge[PeriodSort] >= 3))
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 6b1aba70-fa4f-56a9-a978-6ea9967da5ad
+
+	measure 'KPI Organic Growth' = CALCULATE(SUM(Fact_GrowthBridge[Value]), Fact_GrowthBridge[Component] = "Organic growth", Fact_GrowthBridge[Period] = "FY2025 Actual")
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: KPI
+		lineageTag: 47d334b6-61ae-57da-b6af-7732b350c9e7
+
+	measure 'KPI Organic Growth vs Budget' = VAR a = [KPI Organic Growth] VAR b = CALCULATE(SUM(Fact_GrowthBridge[Value]), Fact_GrowthBridge[Component] = "Organic growth", Fact_GrowthBridge[Period] = "FY2025 Budget (Base)") RETURN "Budget " & FORMAT(b, "0.0%") & "  |  " & FORMAT((a - b) * 10000, "+0;-0") & " bps"
+		displayFolder: KPI
+		lineageTag: 2cae387f-3153-5f8d-8d93-a7e05f6d9aae
+
+	column Period
+		dataType: string
+		lineageTag: 20e9b285-772e-5859-9837-fbd9790e72a8
+		summarizeBy: none
+		sourceColumn: Period
+		sortByColumn: PeriodSort
+
+		annotation SummarizationSetBy = User
+
+	column PeriodSort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0bcb102c-33fa-565b-993f-2f4f03bc59c0
+		summarizeBy: none
+		sourceColumn: PeriodSort
+
+		annotation SummarizationSetBy = User
+
+	column Component
+		dataType: string
+		lineageTag: 1ee48b50-59f0-559c-bbde-10c0a17377e4
+		summarizeBy: none
+		sourceColumn: Component
+		sortByColumn: ComponentSort
+
+		annotation SummarizationSetBy = User
+
+	column ComponentSort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 25a5d628-05da-5609-a29e-485da7c02630
+		summarizeBy: none
+		sourceColumn: ComponentSort
+
+		annotation SummarizationSetBy = User
+
+	column IsComponent
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: adea8471-2bf8-56f4-bab1-a61ae0798e49
+		summarizeBy: none
+		sourceColumn: IsComponent
+
+		annotation SummarizationSetBy = User
+
+	column Value
+		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 5cc03650-b775-593c-b927-fbe29dec2004
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = User
+
+	partition Fact_GrowthBridge = m
+		mode: import
+		source =
+				let
+					Source = #table(
+						type table [Period = text, PeriodSort = Int64.Type, Component = text, ComponentSort = Int64.Type, IsComponent = Int64.Type, Value = number],
+						{
+							{"FY2022", 1, "RIG", 1, 1, 0.001},
+							{"FY2022", 1, "Pricing", 2, 1, 0.082},
+							{"FY2022", 1, "Net M&A", 3, 1, 0.011},
+							{"FY2022", 1, "FX", 4, 1, -0.009},
+							{"FY2022", 1, "Organic growth", 5, 0, 0.083},
+							{"FY2022", 1, "Reported sales growth", 6, 0, 0.084237},
+							{"FY2024", 2, "RIG", 1, 1, 0.008},
+							{"FY2024", 2, "Pricing", 2, 1, 0.015},
+							{"FY2024", 2, "Net M&A", 3, 1, -0.003},
+							{"FY2024", 2, "FX", 4, 1, -0.037},
+							{"FY2024", 2, "Organic growth", 5, 0, 0.022},
+							{"FY2024", 2, "Reported sales growth", 6, 0, -0.017678},
+							{"FY2025 Budget (Base)", 3, "RIG", 1, 1, 0.015},
+							{"FY2025 Budget (Base)", 3, "Pricing", 2, 1, 0.015},
+							{"FY2025 Budget (Base)", 3, "Net M&A", 3, 1, 0.0},
+							{"FY2025 Budget (Base)", 3, "FX", 4, 1, 0.0},
+							{"FY2025 Budget (Base)", 3, "Organic growth", 5, 0, 0.03},
+							{"FY2025 Budget (Base)", 3, "Reported sales growth", 6, 0, 0.03},
+							{"FY2025 Actual", 4, "RIG", 1, 1, 0.008},
+							{"FY2025 Actual", 4, "Pricing", 2, 1, 0.028},
+							{"FY2025 Actual", 4, "Net M&A", 3, 1, 0.001},
+							{"FY2025 Actual", 4, "FX", 4, 1, -0.057},
+							{"FY2025 Actual", 4, "Organic growth", 5, 0, 0.035},
+							{"FY2025 Actual", 4, "Reported sales growth", 6, 0, -0.020404}
+						}
+					)
+				in
+					Source
+
+	annotation PBI_ResultType = Table
+

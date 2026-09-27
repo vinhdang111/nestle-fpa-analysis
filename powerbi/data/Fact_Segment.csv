@@ -1,0 +1,33 @@
+Year,Segment,SegmentSort,Sales,UTOP,SegmentType,Latitude,Longitude
+FY2021,Zone North America,1,23693.0,4804.0,Geographic zone,40.0,-100.0
+FY2022,Zone North America,1,26328.0,5528.0,Geographic zone,40.0,-100.0
+FY2023,Zone North America,1,25995.0,5768.0,Geographic zone,40.0,-100.0
+FY2024,Zone North America,1,25336.0,5640.0,Geographic zone,40.0,-100.0
+FY2021,Zone Europe,2,18794.0,3439.0,Geographic zone,50.0,10.0
+FY2022,Zone Europe,2,19128.0,3138.0,Geographic zone,50.0,10.0
+FY2023,Zone Europe,2,19098.0,3127.0,Geographic zone,50.0,10.0
+FY2024,Zone Europe,2,18910.0,3192.0,Geographic zone,50.0,10.0
+FY2021,Zone AOA,3,17894.0,4288.0,Geographic zone,10.0,75.0
+FY2022,Zone AOA,3,18484.0,4237.0,Geographic zone,10.0,75.0
+FY2023,Zone AOA,3,17519.0,4109.0,Geographic zone,10.0,75.0
+FY2024,Zone AOA,3,16793.0,3916.0,Geographic zone,10.0,75.0
+FY2021,Zone Latin America,4,10086.0,2208.0,Geographic zone,-15.0,-60.0
+FY2022,Zone Latin America,4,11819.0,2501.0,Geographic zone,-15.0,-60.0
+FY2023,Zone Latin America,4,12196.0,2520.0,Geographic zone,-15.0,-60.0
+FY2024,Zone Latin America,4,11933.0,2429.0,Geographic zone,-15.0,-60.0
+FY2021,Zone Greater China,5,5175.0,700.0,Geographic zone,35.0,104.0
+FY2022,Zone Greater China,5,5351.0,862.0,Geographic zone,35.0,104.0
+FY2023,Zone Greater China,5,5037.0,832.0,Geographic zone,35.0,104.0
+FY2024,Zone Greater China,5,4973.0,803.0,Geographic zone,35.0,104.0
+FY2021,Nestlé Health Science,6,4822.0,654.0,Global business,,
+FY2022,Nestlé Health Science,6,6602.0,899.0,Global business,,
+FY2023,Nestlé Health Science,6,6498.0,777.0,Global business,,
+FY2024,Nestlé Health Science,6,6739.0,943.0,Global business,,
+FY2021,Nespresso,7,6418.0,1475.0,Global business,,
+FY2022,Nespresso,7,6448.0,1388.0,Global business,,
+FY2023,Nespresso,7,6372.0,1291.0,Global business,,
+FY2024,Nespresso,7,6378.0,1278.0,Global business,,
+FY2021,Other Businesses,8,206.0,-32.0,Global business,,
+FY2022,Other Businesses,8,264.0,-17.0,Global business,,
+FY2023,Other Businesses,8,283.0,-12.0,Global business,,
+FY2024,Other Businesses,8,292.0,-13.0,Global business,,

@@ -1,0 +1,103 @@
+table Fact_Category
+	lineageTag: cea85b7c-bacb-5964-9116-72eece566ac2
+
+	measure 'Category Sales' = SUM(Fact_Category[Sales])
+		formatString: #,##0;(#,##0);-
+		lineageTag: c7241f17-397f-5355-92ba-13456ab461ec
+
+	measure 'Category UTOP Margin' = DIVIDE(SUM(Fact_Category[UTOP]), SUM(Fact_Category[Sales]))
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d5722890-5dd2-5d5b-91bf-aac11c1dfff7
+
+	measure 'Category Sales (Selected Year)' = IF(HASONEVALUE(Dim_Year[Year]), [Category Sales], CALCULATE([Category Sales], Dim_Year[Year] = "FY2024"))
+		formatString: #,##0;(#,##0);-
+		displayFolder: Overview
+		lineageTag: 27389657-061c-50fd-bdcf-c667405cd276
+
+	column Year
+		dataType: string
+		lineageTag: 17c16326-3b70-5bf9-a18c-3b6525ce3512
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+	column Category
+		dataType: string
+		lineageTag: 022760db-5624-5e57-bcae-355f86c21deb
+		summarizeBy: none
+		sourceColumn: Category
+		sortByColumn: CategorySort
+
+		annotation SummarizationSetBy = User
+
+	column CategorySort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e0997250-9f1e-547c-9658-43e35111cce9
+		summarizeBy: none
+		sourceColumn: CategorySort
+
+		annotation SummarizationSetBy = User
+
+	column Sales
+		dataType: double
+		formatString: #,##0;(#,##0);-
+		lineageTag: 1ef1f2cf-ea8c-58fa-8f27-8f1f1bdb61f1
+		summarizeBy: none
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = User
+
+	column UTOP
+		dataType: double
+		formatString: #,##0;(#,##0);-
+		lineageTag: 34192c54-2059-5289-ba69-bb50a5050140
+		summarizeBy: none
+		sourceColumn: UTOP
+
+		annotation SummarizationSetBy = User
+
+	partition Fact_Category = m
+		mode: import
+		source =
+				let
+					Source = #table(
+						type table [Year = text, Category = text, CategorySort = Int64.Type, Sales = number, UTOP = number],
+						{
+							{"FY2021", "Powdered & liquid beverages", 1, 23975.0, 5631.0},
+							{"FY2022", "Powdered & liquid beverages", 1, 25218.0, 5593.0},
+							{"FY2023", "Powdered & liquid beverages", 1, 24786.0, 5130.0},
+							{"FY2024", "Powdered & liquid beverages", 1, 24598.0, 4920.0},
+							{"FY2021", "Water", 2, 4040.0, 364.0},
+							{"FY2022", "Water", 2, 3536.0, 277.0},
+							{"FY2023", "Water", 2, 3320.0, 351.0},
+							{"FY2024", "Water", 2, 3180.0, 297.0},
+							{"FY2021", "Milk products & ice cream", 3, 10700.0, 2707.0},
+							{"FY2022", "Milk products & ice cream", 3, 11289.0, 2568.0},
+							{"FY2023", "Milk products & ice cream", 3, 10981.0, 2688.0},
+							{"FY2024", "Milk products & ice cream", 3, 10397.0, 2442.0},
+							{"FY2021", "Nutrition & Health Science", 4, 13157.0, 2307.0},
+							{"FY2022", "Nutrition & Health Science", 4, 15678.0, 2990.0},
+							{"FY2023", "Nutrition & Health Science", 4, 15278.0, 2831.0},
+							{"FY2024", "Nutrition & Health Science", 4, 15137.0, 3006.0},
+							{"FY2021", "Prepared dishes & cooking aids", 5, 12146.0, 2040.0},
+							{"FY2022", "Prepared dishes & cooking aids", 5, 12484.0, 2038.0},
+							{"FY2023", "Prepared dishes & cooking aids", 5, 11666.0, 2136.0},
+							{"FY2024", "Prepared dishes & cooking aids", 5, 10711.0, 2137.0},
+							{"FY2021", "Confectionery", 6, 7514.0, 1205.0},
+							{"FY2022", "Confectionery", 6, 8118.0, 1364.0},
+							{"FY2023", "Confectionery", 6, 8107.0, 1364.0},
+							{"FY2024", "Confectionery", 6, 8449.0, 1299.0},
+							{"FY2021", "PetCare", 7, 15556.0, 3282.0},
+							{"FY2022", "PetCare", 7, 18101.0, 3706.0},
+							{"FY2023", "PetCare", 7, 18860.0, 3912.0},
+							{"FY2024", "PetCare", 7, 18882.0, 4087.0}
+						}
+					)
+				in
+					Source
+
+	annotation PBI_ResultType = Table
+

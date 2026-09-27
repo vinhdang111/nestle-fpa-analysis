@@ -1,0 +1,252 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "pl_by_scenario",
+  "position": {
+    "x": 663.34346504559278,
+    "y": 462.00607902735567,
+    "z": 14000,
+    "height": 242.18844984802433,
+    "width": 560.243161094225,
+    "tabOrder": 14000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_LineItem"
+                    }
+                  },
+                  "Property": "LineItem"
+                }
+              },
+              "queryRef": "Dim_LineItem.LineItem",
+              "nativeQueryRef": "LineItem",
+              "displayName": "Line item"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PL"
+                    }
+                  },
+                  "Property": "FY24 Actual"
+                }
+              },
+              "queryRef": "Fact_PL.FY24 Actual",
+              "nativeQueryRef": "FY24 Actual",
+              "displayName": "FY2024 Actual"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PL"
+                    }
+                  },
+                  "Property": "FY25 Budget Adverse"
+                }
+              },
+              "queryRef": "Fact_PL.FY25 Budget Adverse",
+              "nativeQueryRef": "FY25 Budget Adverse",
+              "displayName": "Adverse"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PL"
+                    }
+                  },
+                  "Property": "FY25 Budget (Base)"
+                }
+              },
+              "queryRef": "Fact_PL.FY25 Budget (Base)",
+              "nativeQueryRef": "FY25 Budget (Base)",
+              "displayName": "Base"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_PL"
+                    }
+                  },
+                  "Property": "FY25 Budget Favorable"
+                }
+              },
+              "queryRef": "Fact_PL.FY25 Budget Favorable",
+              "nativeQueryRef": "FY25 Budget Favorable",
+              "displayName": "Favorable"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_LineItem"
+                  }
+                },
+                "Property": "LineItem"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Income statement by scenario (CHF m)'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#63513D'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "12a1dbaf77bd09c73c09",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_LineItem"
+              }
+            },
+            "Property": "LineItem"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a5d23a7d21cddaa4dc70",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_PL"
+              }
+            },
+            "Property": "FY24 Actual"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "95b0368679b79087e162",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_PL"
+              }
+            },
+            "Property": "FY25 Budget Adverse"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "82ab0f75ea51973b98bc",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_PL"
+              }
+            },
+            "Property": "FY25 Budget (Base)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "06880bf8843cb9c10880",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_PL"
+              }
+            },
+            "Property": "FY25 Budget Favorable"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+Driver,ShortName,DriverSort,Unit,Adverse,Base,Favorable,FY2025 Actual,Actual vs Base,Result,RangeScore
+Real Internal Growth (RIG) — volume/mix,RIG (volume/mix),1,%,0.5%,1.5%,2.5%,0.8%,-70 bps,Within scenario range,0.7
+Foreign Exchange (FX) Impact,FX impact,2,%,-4.0%,0.0%,2.0%,-5.7%,-570 bps,Worse than Adverse,1.425
+Cost of Goods Sold (% of Sales),COGS % of sales,3,%,53.9%,52.9%,51.9%,54.4%,+151 bps,Worse than Adverse,1.512784
+Marketing & Administration Expenses (% of Sales),Marketing & admin % of sales,4,%,21.4%,20.9%,20.4%,20.0%,-92 bps,Better than Favorable,-1.833523
+"Other Trading Items, net (% of Sales)",Other trading items % of sales,5,%,-1.9%,-1.4%,-0.9%,-1.9%,-52 bps,Worse than Adverse,1.030596
+Net Financial Expense Growth (vs FY2024),Net financial expense growth,6,%,15.0%,5.0%,-5.0%,2.8%,-224 bps,Within scenario range,-0.223906
+Income from Associates & JVs Growth,Associates income growth,7,%,-2.0%,8.0%,18.0%,-8.5%,"-1,649 bps",Worse than Adverse,1.648679
+Effective Tax Rate,Effective tax rate,8,%,26.0%,24.0%,22.0%,24.6%,+56 bps,Within scenario range,0.277928
+Working Capital & Other Operating Movements (CHF m),Working capital (CHF m),9,CHF m,"-1,000",0,"1,000",-319,-319,Within scenario range,0.319
+Capital Expenditure (% of Sales),Capex % of sales,10,%,6.7%,6.2%,5.7%,5.1%,-114 bps,Better than Favorable,-2.282668

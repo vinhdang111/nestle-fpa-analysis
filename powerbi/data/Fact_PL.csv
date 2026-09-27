@@ -1,0 +1,161 @@
+Year,Scenario,LineItem,Value
+FY2021,Actual,Sales,87088.0
+FY2022,Actual,Sales,94424.0
+FY2023,Actual,Sales,92998.0
+FY2024,Actual,Sales,91354.0
+FY2025,Actual,Sales,89490.0
+FY2025,Budget - Adverse,Sales,89526.92
+FY2025,Budget - Base,Sales,94094.62
+FY2025,Budget - Favorable,Sales,96835.24
+FY2021,Actual,Other revenue,382.0
+FY2022,Actual,Other revenue,356.0
+FY2023,Actual,Other revenue,353.0
+FY2024,Actual,Other revenue,366.0
+FY2025,Actual,Other revenue,395.0
+FY2025,Budget - Adverse,Other revenue,358.10768
+FY2025,Budget - Base,Other revenue,376.37848
+FY2025,Budget - Favorable,Other revenue,387.34096
+FY2021,Actual,Cost of goods sold,-45468.0
+FY2022,Actual,Cost of goods sold,-51745.0
+FY2023,Actual,Cost of goods sold,-50328.0
+FY2024,Actual,Cost of goods sold,-48670.0
+FY2025,Actual,Cost of goods sold,-48694.0
+FY2025,Budget - Adverse,Cost of goods sold,-48255.00988
+FY2025,Budget - Base,Cost of goods sold,-49776.05398
+FY2025,Budget - Favorable,Cost of goods sold,-50257.48956
+FY2021,Actual,Distribution expenses,-7919.0
+FY2022,Actual,Distribution expenses,-8386.0
+FY2023,Actual,Distribution expenses,-7765.0
+FY2024,Actual,Distribution expenses,-7567.0
+FY2025,Actual,Distribution expenses,-7306.0
+FY2025,Budget - Adverse,Distribution expenses,-7341.20744
+FY2025,Budget - Base,Distribution expenses,-7715.75884
+FY2025,Budget - Favorable,Distribution expenses,-7940.48968
+FY2021,Actual,Marketing & administration,-17294.0
+FY2022,Actual,Marketing & administration,-16850.0
+FY2023,Actual,Marketing & administration,-17549.0
+FY2024,Actual,Marketing & administration,-18112.0
+FY2025,Actual,Marketing & administration,-17883.0
+FY2025,Budget - Adverse,Marketing & administration,-19158.76088
+FY2025,Budget - Base,Marketing & administration,-19665.77558
+FY2025,Budget - Favorable,Marketing & administration,-19754.38896
+FY2021,Actual,Research & development,-1670.0
+FY2022,Actual,Research & development,-1696.0
+FY2023,Actual,Research & development,-1656.0
+FY2024,Actual,Research & development,-1667.0
+FY2025,Actual,Research & development,-1613.0
+FY2025,Budget - Adverse,Research & development,-1611.48456
+FY2025,Budget - Base,Research & development,-1693.70316
+FY2025,Budget - Favorable,Research & development,-1743.03432
+FY2021,Actual,UTOP,15119.0
+FY2022,Actual,UTOP,16103.0
+FY2023,Actual,UTOP,16053.0
+FY2024,Actual,UTOP,15704.0
+FY2025,Actual,UTOP,14389.0
+FY2025,Budget - Adverse,UTOP,13518.56492
+FY2025,Budget - Base,UTOP,15619.70692
+FY2025,Budget - Favorable,UTOP,17527.17844
+FY2021,Actual,"Other trading items, net",-2960.0
+FY2022,Actual,"Other trading items, net",-2908.0
+FY2023,Actual,"Other trading items, net",-1533.0
+FY2024,Actual,"Other trading items, net",-1071.0
+FY2025,Actual,"Other trading items, net",-1714.0
+FY2025,Budget - Adverse,"Other trading items, net",-1701.01148
+FY2025,Budget - Base,"Other trading items, net",-1317.32468
+FY2025,Budget - Favorable,"Other trading items, net",-871.51716
+FY2021,Actual,Trading operating profit,12159.0
+FY2022,Actual,Trading operating profit,13195.0
+FY2023,Actual,Trading operating profit,14520.0
+FY2024,Actual,Trading operating profit,14633.0
+FY2025,Actual,Trading operating profit,12675.0
+FY2025,Budget - Adverse,Trading operating profit,11817.55344
+FY2025,Budget - Base,Trading operating profit,14302.38224
+FY2025,Budget - Favorable,Trading operating profit,16655.66128
+FY2021,Actual,"Other operating items, net",-480.0
+FY2022,Actual,"Other operating items, net",-869.0
+FY2023,Actual,"Other operating items, net",-457.0
+FY2024,Actual,"Other operating items, net",91.0
+FY2025,Actual,"Other operating items, net",-398.0
+FY2025,Budget - Adverse,"Other operating items, net",-179.05384
+FY2025,Budget - Base,"Other operating items, net",-188.18924
+FY2025,Budget - Favorable,"Other operating items, net",-193.67048
+FY2021,Actual,Operating profit,11679.0
+FY2022,Actual,Operating profit,12326.0
+FY2023,Actual,Operating profit,14063.0
+FY2024,Actual,Operating profit,14724.0
+FY2025,Actual,Operating profit,12277.0
+FY2025,Budget - Adverse,Operating profit,11638.4996
+FY2025,Budget - Base,Operating profit,14114.193
+FY2025,Budget - Favorable,Operating profit,16461.9908
+FY2021,Actual,Financial income,80.0
+FY2022,Actual,Financial income,210.0
+FY2023,Actual,Financial income,284.0
+FY2024,Actual,Financial income,358.0
+FY2025,Actual,Financial income,300.0
+FY2025,Budget - Adverse,Financial income,358.0
+FY2025,Budget - Base,Financial income,358.0
+FY2025,Budget - Favorable,Financial income,358.0
+FY2021,Actual,Financial expense,-953.0
+FY2022,Actual,Financial expense,-1250.0
+FY2023,Actual,Financial expense,-1644.0
+FY2024,Actual,Financial expense,-1843.0
+FY2025,Actual,Financial expense,-1826.0
+FY2025,Budget - Adverse,Financial expense,-2065.75
+FY2025,Budget - Base,Financial expense,-1917.25
+FY2025,Budget - Favorable,Financial expense,-1768.75
+FY2021,Actual,Net financial expense,-873.0
+FY2022,Actual,Net financial expense,-1040.0
+FY2023,Actual,Net financial expense,-1360.0
+FY2024,Actual,Net financial expense,-1485.0
+FY2025,Actual,Net financial expense,-1526.0
+FY2025,Budget - Adverse,Net financial expense,-1707.75
+FY2025,Budget - Base,Net financial expense,-1559.25
+FY2025,Budget - Favorable,Net financial expense,-1410.75
+FY2021,Actual,Profit before taxes & associates,10806.0
+FY2022,Actual,Profit before taxes & associates,11286.0
+FY2023,Actual,Profit before taxes & associates,12703.0
+FY2024,Actual,Profit before taxes & associates,13239.0
+FY2025,Actual,Profit before taxes & associates,10751.0
+FY2025,Budget - Adverse,Profit before taxes & associates,9930.7496
+FY2025,Budget - Base,Profit before taxes & associates,12554.943
+FY2025,Budget - Favorable,Profit before taxes & associates,15051.2408
+FY2021,Actual,Income from associates & JVs,8651.0
+FY2022,Actual,Income from associates & JVs,1040.0
+FY2023,Actual,Income from associates & JVs,1120.0
+FY2024,Actual,Income from associates & JVs,1249.0
+FY2025,Actual,Income from associates & JVs,1143.0
+FY2025,Budget - Adverse,Income from associates & JVs,1224.02
+FY2025,Budget - Base,Income from associates & JVs,1348.92
+FY2025,Budget - Favorable,Income from associates & JVs,1473.82
+FY2021,Actual,Taxes,-2261.0
+FY2022,Actual,Taxes,-2730.0
+FY2023,Actual,Taxes,-2314.0
+FY2024,Actual,Taxes,-3314.0
+FY2025,Actual,Taxes,-2640.0
+FY2025,Budget - Adverse,Taxes,-2581.994896
+FY2025,Budget - Base,Taxes,-3013.18632
+FY2025,Budget - Favorable,Taxes,-3311.272976
+FY2021,Actual,Profit for the year,17196.0
+FY2022,Actual,Profit for the year,9596.0
+FY2023,Actual,Profit for the year,11509.0
+FY2024,Actual,Profit for the year,11174.0
+FY2025,Actual,Profit for the year,9254.0
+FY2025,Budget - Adverse,Profit for the year,8572.774704
+FY2025,Budget - Base,Profit for the year,10890.67668
+FY2025,Budget - Favorable,Profit for the year,13213.787824
+FY2021,Actual,Non-controlling interests,291.0
+FY2022,Actual,Non-controlling interests,326.0
+FY2023,Actual,Non-controlling interests,300.0
+FY2024,Actual,Non-controlling interests,290.0
+FY2025,Actual,Non-controlling interests,221.0
+FY2025,Budget - Adverse,Non-controlling interests,222.892142
+FY2025,Budget - Base,Non-controlling interests,283.157594
+FY2025,Budget - Favorable,Non-controlling interests,343.558483
+FY2021,Actual,Net profit,16905.0
+FY2022,Actual,Net profit,9270.0
+FY2023,Actual,Net profit,11209.0
+FY2024,Actual,Net profit,10884.0
+FY2025,Actual,Net profit,9033.0
+FY2025,Budget - Adverse,Net profit,8349.882562
+FY2025,Budget - Base,Net profit,10607.519086
+FY2025,Budget - Favorable,Net profit,12870.229341
