@@ -4,7 +4,7 @@ An end-to-end FP&A (Financial Planning & Analysis) portfolio project built on **
 
 ## Why Nestlé
 
-Nestlé is headquartered in Vevey, Switzerland, and reports segment revenue by geographic Zone (including Asia-Oceania-Africa, which covers Singapore) and by product category, alongside Organic Growth / Real Internal Growth (RIG) / Pricing effect disclosures — a rich, transparent disclosure structure that makes it a strong subject for a realistic FP&A analysis.
+Nestlé is headquartered in Vevey, Switzerland, and reports segment revenue by geographic Zone and by product category, alongside Organic Growth / Real Internal Growth (RIG) / Pricing effect disclosures — a rich, transparent disclosure structure that makes it a strong subject for a realistic FP&A analysis.
 
 ## Data sources
 
