@@ -96,3 +96,5 @@ This is an independent portfolio analysis. It is not prepared by, affiliated wit
 ## Author
 
 Thanh Vinh Dang — [LinkedIn](https://linkedin.com/in/thanhvinhdang2001)
+
+**PORTFOLIO:** [https://vinhdang111.github.io/](https://vinhdang111.github.io/)
