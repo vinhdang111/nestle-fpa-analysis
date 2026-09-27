@@ -1,6 +1,6 @@
 # Nestlé FP&A Case Study
 
-An end-to-end FP&A (Financial Planning & Analysis) portfolio project built on **Nestlé's real, publicly disclosed financials** — segment/category data foundation, a driver-based budget model with Adverse / Base / Favorable scenarios, actual-vs-budget variance analysis, an interactive dashboard, and a strategic business case.
+An end-to-end FP&A (Financial Planning & Analysis) portfolio project built on **Nestlé's real, publicly disclosed financials** — segment/category data foundation, a driver-based budget model with Adverse / Base / Favorable scenarios, actual-vs-budget variance analysis, an interactive dashboard, and an FY2026 reforecast with sensitivity analysis.
 
 ## Why Nestlé
 
@@ -16,6 +16,9 @@ All figures are sourced directly from Nestlé's official Investor Relations pres
 - [2022 Financial Statements](https://www.nestle.com/sites/default/files/2023-02/2022-financial-statements-en.pdf) (16 Feb 2023) — full Consolidated Income Statement & Statement of Cash Flows, FY2022 vs FY2021
 - [Full-Year Results 2025 press release](https://www.nestle.com/sites/default/files/2026-02/full-year-results-press-release-2025-en.pdf) (19 Feb 2026) — FY2025 vs FY2024 Sales, organic growth (RIG/Pricing split), UTOP, Net Profit, EPS, Free Cash Flow, Net Debt, dividend and FY2026 guidance, used in the Variance Analysis
 - [2025 Financial Statements](https://www.nestle.com/sites/default/files/2026-02/financial-statements-2025-en.pdf) (19 Feb 2026) — full Consolidated Income Statement & Statement of Cash Flows, FY2025 vs FY2024, used for the Variance Analysis
+- [2025 Full Year Results prepared-remarks transcript](https://www.nestle.com/sites/default/files/2026-02/full-year-results-transcript-2025.pdf) (19 Feb 2026) — capex guidance ("4% to 5% of sales"), working capital and the February FX estimate, used for the FY2026 Reforecast
+- [Half-Year Results 2026 press release](https://www.nestle.com/sites/default/files/2026-07/half-year-results-press-release-2026-en.pdf) (23 Jul 2026) — latest FY2026 guidance (FX about -3%, organic growth 3%–4%, H2 UTOP margin broadly similar to H1, free cash flow above CHF 9bn), H1-2026 RIG / pricing and the CHF 1.3bn write-down, used for the FY2026 Reforecast
+- [Half-Year Report January–June 2026](https://www.nestle.com/sites/default/files/2026-07/half-year-report-2026-en.pdf) (23 Jul 2026) — H1-2026 income statement and cash flow line items, used as reference for the FY2026 assumptions
 
 Original PDF copies of these documents are kept in [`data/raw/`](data/raw) for traceability/reproducibility.
 
@@ -26,8 +29,8 @@ Original PDF copies of these documents are kept in [`data/raw/`](data/raw) for t
 | 1 | Data Foundation + Full Income Statement & Cash Flow Statement — segment & category sales/UTOP (FY2021–FY2024), and the full line-by-line Consolidated Income Statement and Statement of Cash Flows, all built on Nestlé's actuals | ✅ Done |
 | 2 | Driver-based FY2025 Budget Model — full line-item P&L + Cash Flow (~40 assumptions) under Adverse / Base / Favorable scenarios | ✅ Done |
 | 3 | Variance Analysis — FY2025 Actual vs the Base Budget, with a RIG/Pricing/Net M&A/FX sales bridge, full Income Statement & Cash Flow variance, where Actual landed within the scenario range, and a backtest of each flexed driver | ✅ Done |
-| 4 | Power BI Dashboard — four report pages following the project timeline: FY2021–FY2024 Overview, FY2025 Budget Scenarios, Variance Analysis and Backtest | ✅ Done |
-| 5 | Business Case (strategic decision + sensitivity) | 🔜 Next |
+| 4 | FY2026 Reforecast + Sensitivity Analysis — full-year FY2026 forecast using Nestlé's latest guidance where given and judgement informed by the FY2025 variance elsewhere, checked against the guidance, plus a sensitivity analysis on the two drivers that missed most in FY2025 (FX and COGS) | ✅ Done |
+| 5 | Power BI Dashboard — one dashboard covering every step: FY2021–FY2024 Overview, FY2025 Budget Scenarios, Variance Analysis, Backtest, and the FY2026 Reforecast & Sensitivity | ✅ Done |
 
 ## Repo Structure
 
@@ -50,6 +53,9 @@ Sheets:
 - **2. Assumptions_FY2025** — ~40 line-item FY2025 budget drivers covering the full Income Statement and Cash Flow Statement, in three columns: **Adverse / Base / Favorable**. Base follows Nestlé's own FY2025 guidance where available, or an explicit own-assumption with documented rationale where not. Adverse and Favorable flex ten key drivers (RIG, FX, COGS %, Marketing & Admin %, other trading items, net financial expense, associates income, tax rate, working capital, capex) using ranges sized from Nestlé's FY2021–FY2024 history; every other driver is held at Base. Yellow cells are the editable levers.
 - **2. Budget_FY2025_PL_CF** — Full-detail FY2025 Budget under the Adverse, Base and Favorable scenarios, side by side with FY2024 Actual, built at the same line-item level as `1. Income_Statement` and `1. Cash_Flow_Statement` and fully driven by `2. Assumptions_FY2025`. Built entirely from information Nestlé disclosed on 13-Feb-2025 — **before** FY2025 actual results were known, deliberately without hindsight, so the gap to real FY2025 results (Step 3) is a genuine variance, not a fitted one. The Base scenario is the plan Step 3 measures against.
 - **3. Variance_Analysis** — FY2025 Actual versus the Base Budget: (A) a Group Sales Growth Bridge decomposing Budget vs Actual into RIG (Real Internal Growth), Pricing, Organic Growth, Net M&A and FX — the same framework Nestlé uses in its own disclosures; (B) a full line-item Income Statement variance (CHF m and %); (C) a full line-item Cash Flow variance; (D) where Actual landed versus the Adverse / Base / Favorable scenarios; (E) a backtest of each flexed driver against its scenario range; and (F) written commentary on what drove the variance. All FY2025 Actual figures are hardcoded (blue) inputs sourced from Nestlé's FY2025 Full-Year Results press release and Financial Statements (19-Feb-2026).
+- **5. Assumptions_FY2026** — every FY2026 driver next to the FY2025 Budget (Base), the FY2025 Actual and the H1-2026 actual. Numbers Nestlé has guided or already reported are used as published and marked **[Guided]** with their source (latest: Half-Year Results 2026, 23-Jul-2026 — FX about -3%, organic growth 3%–4% with RIG accelerating, H2 UTOP margin broadly similar to H1, the CHF 1.3bn held-for-sale write-down, the dividend already paid). Every other driver is marked **[Judgement]**: a reasoned value informed by the FY2025 variance and the H1-2026 run-rates, not a copy of the FY2025 figure.
+- **5. Reforecast_FY2026** — FY2026 Reforecast vs FY2025 Actual at the same line-item level as the Budget (full P&L and Cash Flow), with a check against Nestlé's latest FY2026 guidance (organic growth 3%–4%, RIG accelerating, FX about -3%, UTOP margin improving and close to H1, free cash flow above CHF 9bn, capex 4%–5% of sales).
+- **5. Sensitivity_FY2026** — the two largest FY2025 misses, FX and COGS, stress-tested on the reforecast: one-way tables (sales, UTOP, net profit, EPS, free cash flow) for FX from -9% to 0% and COGS from 52.5% to 55.5% of sales, a two-way FX × COGS net profit grid, and rules of thumb: the value of 1 pp of FX and 10 bps of COGS, what Nestlé's July FX update is worth, and how far each driver can move before the reforecast breaks the guidance.
 
 **Conventions:** blue text = hardcoded inputs sourced from the press releases above · black text = formulas · green text = cross-sheet links · yellow fill = editable budget assumptions. All formulas recalculate cleanly (0 errors).
 
@@ -62,6 +68,7 @@ Sheets:
 - The Step 3 Variance Analysis shows FY2025 was primarily an FX story: actual organic sales growth (3.5%) beat the Budget's 3.0% assumption — though with the opposite mix to plan (RIG 0.8% vs 1.5% budgeted, Pricing 2.8% vs 1.5%) — but a -5.7% actual FX headwind against a flat (0.0%) Budget assumption explains nearly the entire swing from a budgeted +3.0% reported sales growth to an actual -2.0% decline. Net Profit fell further than the FX/sales effect alone would suggest: COGS rose to 54.4% of sales (+151 bps vs Budget) and one-off items (including a higher impairment charge) and lower associates income added to the gap, partly offset by lower Marketing & Administration spend (see `3. Variance_Analysis`, Section D).
 - The FY2025 Budget's ~40 assumptions are a mix of Nestlé's own disclosed guidance (organic sales growth, resulting UTOP margin "at or above 16.0%", no new share buyback) and explicit own-assumptions grounded in historical ratios/trends where the company gave no specific figure (e.g. cost ratios, capex intensity, working capital, financing flows) — every assumption's source is documented in the `2. Assumptions_FY2025` sheet.
 - The Budget's ending cash balance rises materially versus FY2024 (CHF 5,558m → CHF 9,240m) mainly because two large FY2024 one-off outflows — the CHF 4,678m share buyback and ~CHF 2,130m of M&A/treasury-investment outflows — are assumed not to repeat in FY2025, per guidance. Operating Cash Flow itself is budgeted slightly *below* FY2024 (CHF 15,666m vs CHF 16,675m); this is flagged in-sheet so the cash build isn't mistaken for an operating improvement.
+- The FY2026 Reforecast lands inside Nestlé's guidance — organic growth 3.5% (RIG 1.6%), FX -3%, UTOP margin 16.5% (up almost 50 bps) and derived free cash flow of CHF 10.7bn — but net profit falls about 11% to CHF 8.1bn because of the CHF 1.3bn non-cash write-down on the businesses Nestlé is divesting. The sensitivity analysis shows that COGS is the bigger lever: each 10 bps of COGS moves net profit by about CHF 64m, as much as 0.8 pp of FX (about CHF 82m per pp); Nestlé's July FX update (from about -6% to about -3%) is worth roughly CHF 250m of net profit, and the UTOP margin only keeps improving while COGS stays below about 54.1% of sales.
 - The Adverse and Favorable scenarios move all ten flexed drivers together, so they form a stress range around the Base plan rather than probability-weighted forecasts. In the Step 3 backtest, FY2025 Net Profit landed between Adverse and Base, Sales came in just below Adverse, and 6 of the 10 flexed drivers fell outside their Adverse–Favorable ranges (FX, COGS, other trading items and associates income worse than Adverse; Marketing & Admin and capex better than Favorable).
 
 ## Power BI dashboard — `powerbi/`
@@ -74,12 +81,13 @@ An interactive dashboard built on the Excel workbook above, saved as a Power BI 
 | **2. Budget Scenarios** | The FY2025 Budget: Base-case KPIs with the Adverse–Favorable range, the three scenarios vs FY2024 Actual, the ten flexed assumptions, and the income statement by scenario |
 | **3. Variance Analysis** | FY2025 Actual vs the Base Budget: KPI cards, income statement variance, a net profit bridge from Budget to Actual by line, and the sales growth bridge (RIG / Pricing / Net M&A / FX) |
 | **4. Backtest** | How good the budget was: drivers outside their tested range, each scenario vs Actual for sales, net profit and free cash flow, and a colour-coded driver backtest |
+| **5. FY2026 Reforecast** | Interactive sensitivity: two sliders for FX and COGS (% of sales) re-run the FY2026 income statement (FY2025 Actual vs FY2026 Base vs the chosen scenario), and the FY2026 bar in the sales chart and the net profit / net profit margin chart (FY2021–FY2026) moves with them |
 
-The model is a star schema (11 tables, 79 DAX measures). Every value is exported from the recalculated workbook, with automatic checks that the FY2024 figures reconcile line by line and that the net profit bridge sums exactly to the FY2025 net profit variance. Details are in [`powerbi/README.md`](powerbi/README.md).
+The model is a star schema (11 tables, 79 DAX measures) plus the FY2026 reforecast tables: two what-if parameters (FX and COGS) that drive a DAX version of the reforecast's income statement, reconciled to `4. Reforecast_FY2026` at the Base values. Every value is exported from the recalculated workbook, with automatic checks that the FY2024 figures reconcile line by line and that the net profit bridge sums exactly to the FY2025 net profit variance. Details are in [`powerbi/README.md`](powerbi/README.md).
 
-## Next step
+## Possible extension
 
-Step 5 — Business Case: a strategic decision evaluated with a financial case and sensitivity analysis, built on the same data.
+When Nestlé publishes its FY2026 results (February 2027), backtest the FY2026 Reforecast against them the same way the FY2025 budget was tested in Step 3.
 
 ## Disclaimer
 
