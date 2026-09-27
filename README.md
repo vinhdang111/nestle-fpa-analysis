@@ -40,7 +40,7 @@ Original PDF copies of these documents are kept in [`data/raw/`](data/raw) for t
 | [`excel_model/`](excel_model) | Excel workbook — data foundation, full P&L/CF, FY2025 budget model and variance analysis |
 | [`powerbi/`](powerbi) | Power BI Project (`.pbip`): semantic model (TMDL) and report (PBIR) as text files, plus the exported data as CSV — see [`powerbi/README.md`](powerbi/README.md) |
 
-## Excel workbook — `excel_model/Nestle_Data_Foundation.xlsx`
+## Excel workbook — [`excel_model/Nestle_Data_Foundation.xlsx`](excel_model/Nestle_Data_Foundation.xlsx)
 
 Sheets:
 
@@ -71,7 +71,7 @@ Sheets:
 - The FY2026 Reforecast lands inside Nestlé's guidance — organic growth 3.5% (RIG 1.6%), FX -3%, UTOP margin 16.5% (up almost 50 bps) and derived free cash flow of CHF 10.7bn — but net profit falls about 11% to CHF 8.1bn because of the CHF 1.3bn non-cash write-down on the businesses Nestlé is divesting. The sensitivity analysis shows that COGS is the bigger lever: each 10 bps of COGS moves net profit by about CHF 64m, as much as 0.8 pp of FX (about CHF 82m per pp); Nestlé's July FX update (from about -6% to about -3%) is worth roughly CHF 250m of net profit, and the UTOP margin only keeps improving while COGS stays below about 54.1% of sales.
 - The Adverse and Favorable scenarios move all ten flexed drivers together, so they form a stress range around the Base plan rather than probability-weighted forecasts. In the Step 3 backtest, FY2025 Net Profit landed between Adverse and Base, Sales came in just below Adverse, and 6 of the 10 flexed drivers fell outside their Adverse–Favorable ranges (FX, COGS, other trading items and associates income worse than Adverse; Marketing & Admin and capex better than Favorable).
 
-## Power BI dashboard — `powerbi/`
+## Power BI dashboard — [`powerbi/`](powerbi)
 
 An interactive dashboard built on the Excel workbook above, saved as a Power BI Project (`.pbip`) so every table, DAX measure and visual is stored as reviewable text. To open it, use Power BI Desktop: open `powerbi/Nestle_FPA_Dashboard.pbip`, then click **Refresh** (the data is embedded in the model, so no file paths or credentials are needed).
 
