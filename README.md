@@ -33,10 +33,9 @@ Original PDF copies of these documents are kept in [`data/raw/`](data/raw) for t
 
 | Folder | Contents |
 |---|---|
-| `data/raw/` | Raw source PDFs from Nestlé's Investor Relations site (press releases & full Financial Statements) used to build the Excel workbook — see Data sources above |
-| `excel_model/` | Excel workbook(s) — data foundation, P&L/CF, budget model |
-| `powerbi/` | Power BI Project (`.pbip`): semantic model (TMDL) and report (PBIR) as text files, plus the exported data as CSV — see [`powerbi/README.md`](powerbi/README.md) |
-| `analysis/` | Variance analysis write-ups, business case notes |
+| [`data/raw/`](data/raw) | Raw source PDFs from Nestlé's Investor Relations site (press releases & full Financial Statements) used to build the Excel workbook — see Data sources above |
+| [`excel_model/`](excel_model) | Excel workbook — data foundation, full P&L/CF, FY2025 budget model and variance analysis |
+| [`powerbi/`](powerbi) | Power BI Project (`.pbip`): semantic model (TMDL) and report (PBIR) as text files, plus the exported data as CSV — see [`powerbi/README.md`](powerbi/README.md) |
 
 ## Excel workbook — `excel_model/Nestle_Data_Foundation.xlsx`
 
