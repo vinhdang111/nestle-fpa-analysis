@@ -12246,6 +12246,321 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "rf_is.rf_chart_np_actual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF Chart NP Actual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Net profit — actual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.rf_chart_np_reforecast": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF Chart NP Reforecast"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Net profit — FY2026 reforecast": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.rf_chart_np_margin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF Chart NP Margin"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Net profit margin": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.line": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "Line"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Income statement": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.rf_fy2025_actual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF FY2025 Actual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "FY2025 Actual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.rf_fy2026_base": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF FY2026 Base"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "FY2026 Base": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.rf_scenario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF Scenario"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "FY2026 Scenario": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.rf_scenario_vs_base": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF Scenario vs Base"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Scenario vs Base": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.rf_kpi_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF KPI Sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sales": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.rf_kpi_utop_margin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF KPI UTOP Margin"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "UTOP margin": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.rf_kpi_net_profit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF KPI Net Profit"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Net profit": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.rf_kpi_eps": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF KPI EPS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "EPS (CHF)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.rf_kpi_fcf": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF KPI FCF"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Free cash flow": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.rf_chart_sales_actual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF Chart Sales Actual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Actual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rf_is.rf_chart_sales_reforecast": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RF_IS",
+			          "ConceptualProperty": "RF Chart Sales Reforecast"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "FY2026 reforecast (scenario)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {

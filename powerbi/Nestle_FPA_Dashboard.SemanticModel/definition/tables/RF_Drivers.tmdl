@@ -1,0 +1,58 @@
+table RF_Drivers
+	isHidden
+	lineageTag: 1c051865-3c4e-5a94-af9a-a49f681734de
+
+	column Key
+		dataType: string
+		isHidden
+		lineageTag: 4a14a9e7-bfad-538a-8ef3-74bd48e67a3f
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = User
+
+	column Value
+		dataType: double
+		isHidden
+		lineageTag: 9409e160-fc1e-52d7-96fc-00fbc0479d54
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = User
+
+	partition RF_Drivers = m
+		mode: import
+		source =
+				let
+					Source = #table(
+						type table [Key = text, Value = number],
+						{
+							{"og", 0.035},
+							{"ma", 0.001},
+							{"fx", -0.03},
+							{"orv", 0.0045},
+							{"cogs", 0.536},
+							{"dist", 0.084},
+							{"mna", 0.201},
+							{"rd", 0.018},
+							{"oti", -0.022},
+							{"ooi", -0.015},
+							{"tax", 0.265},
+							{"nci", 0.03},
+							{"shares", 2572.0},
+							{"da", 0.041},
+							{"taxpaid", 0.8},
+							{"capex", 0.043},
+							{"intg", 0.004},
+							{"s0", 89490.0},
+							{"netfin", -1403.92},
+							{"assoc", 857.25},
+							{"cf_fixed", 1810.2745},
+							{"np_fy25", 9033.0}
+						}
+					)
+				in
+					Source
+
+	annotation PBI_ResultType = Table
+

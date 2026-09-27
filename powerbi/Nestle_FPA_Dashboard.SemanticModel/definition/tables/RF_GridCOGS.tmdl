@@ -1,0 +1,18 @@
+table RF_GridCOGS
+	lineageTag: 0a336cd5-3093-594c-924c-6ba4cb4878d8
+
+	column 'COGS % of sales'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: b0ba1c85-bda6-52dd-83cb-669f931bbabc
+		summarizeBy: none
+		sourceColumn: [COGS % of sales]
+
+		annotation SummarizationSetBy = User
+
+	partition RF_GridCOGS = calculated
+		mode: import
+		source = SELECTCOLUMNS(GENERATESERIES(-3, 3, 1), "COGS % of sales", ROUND(0.536 + [Value] * 0.005, 4))
+
+	annotation PBI_Id = e4f3368bf67a5be2bf3fa23f794ccf40
+

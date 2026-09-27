@@ -1,0 +1,29 @@
+table RF_FX
+	lineageTag: 41a38482-7809-5ecf-bf1b-ac40e92ca891
+
+	measure 'FX Scenario' =
+			VAR d = LOOKUPVALUE(RF_Drivers[Value], RF_Drivers[Key], "fx")
+			RETURN IF(HASONEVALUE(RF_FX[FX impact on sales]), VALUES(RF_FX[FX impact on sales]), d)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: a5a4fb81-a868-5a95-b0a9-bb63c76776a3
+
+	column 'FX impact on sales'
+		dataType: double
+		formatString: 0.00%
+		lineageTag: 35daf23f-fdf8-58c4-b2d6-94ea9c181760
+		summarizeBy: none
+		sourceColumn: [FX impact on sales]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition RF_FX = calculated
+		mode: import
+		source = SELECTCOLUMNS(GENERATESERIES(-28, 4, 1), "FX impact on sales", ROUND([Value] * 0.0025, 4))
+
+	annotation PBI_Id = 8366eac34f985e26a84ffeae7041b586
+
