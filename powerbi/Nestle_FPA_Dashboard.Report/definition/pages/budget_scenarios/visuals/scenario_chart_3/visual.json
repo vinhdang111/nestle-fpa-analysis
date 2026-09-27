@@ -164,37 +164,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "225fb83a4bb2d4ec28b6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_BudgetView"
-              }
-            },
-            "Property": "Label"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e1e3a22f80dda76841cb",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_BudgetView"
-              }
-            },
-            "Property": "BV FCF"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

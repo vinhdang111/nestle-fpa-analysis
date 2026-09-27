@@ -129,51 +129,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c401c44d2e440123c3ae",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Segment"
-              }
-            },
-            "Property": "Segment"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "85a35528e85e70862146",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Segment"
-              }
-            },
-            "Property": "Global Business Sales (Selected Year)"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "242460c1e509b099eac6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Segment"
-              }
-            },
-            "Property": "Global Business UTOP Margin (Selected Year)"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

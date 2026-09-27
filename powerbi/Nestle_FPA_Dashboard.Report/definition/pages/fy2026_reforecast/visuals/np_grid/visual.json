@@ -1,16 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "sales_margin_trend",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "np_grid",
   "position": {
-    "x": 341.39817629179333,
-    "y": 492.15805471124622,
-    "z": 7000,
-    "height": 212.03647416413375,
-    "width": 914.28571428571433,
-    "tabOrder": 7000
+    "x": 566,
+    "y": 196,
+    "z": 18000,
+    "height": 250,
+    "width": 690,
+    "tabOrder": 18000
   },
   "visual": {
-    "visualType": "lineStackedColumnComboChart",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_Year"
+                      "Entity": "RF_Years"
                     }
                   },
                   "Property": "Year"
                 }
               },
-              "queryRef": "Dim_Year.Year",
+              "queryRef": "RF_Years.Year",
               "nativeQueryRef": "Year",
               "active": true
             }
@@ -39,34 +39,30 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_PL"
+                      "Entity": "RF_IS"
                     }
                   },
-                  "Property": "Sales Actual"
+                  "Property": "RF Chart Sales Actual"
                 }
               },
-              "queryRef": "Fact_PL.Sales Actual",
-              "nativeQueryRef": "Sales Actual",
-              "displayName": "Sales (CHF m)"
-            }
-          ]
-        },
-        "Y2": {
-          "projections": [
+              "queryRef": "RF_IS.RF Chart Sales Actual",
+              "nativeQueryRef": "RF Chart Sales Actual",
+              "displayName": "Actual"
+            },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_PL"
+                      "Entity": "RF_IS"
                     }
                   },
-                  "Property": "Net Profit Margin Actual"
+                  "Property": "RF Chart Sales Reforecast"
                 }
               },
-              "queryRef": "Fact_PL.Net Profit Margin Actual",
-              "nativeQueryRef": "Net Profit Margin Actual",
-              "displayName": "Net profit margin"
+              "queryRef": "RF_IS.RF Chart Sales Reforecast",
+              "nativeQueryRef": "RF Chart Sales Reforecast",
+              "displayName": "FY2026 reforecast (scenario)"
             }
           ]
         }
@@ -78,7 +74,7 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Dim_Year"
+                    "Entity": "RF_Years"
                   }
                 },
                 "Property": "Year"
@@ -97,6 +93,45 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'InsideEnd'"
                 }
               }
             }
@@ -119,7 +154,7 @@
             }
           },
           "selector": {
-            "metadata": "Fact_PL.Sales Actual"
+            "metadata": "RF_IS.RF Chart Sales Actual"
           }
         },
         {
@@ -129,7 +164,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#B5543C'"
+                      "Value": "'#B08D57'"
                     }
                   }
                 }
@@ -137,34 +172,7 @@
             }
           },
           "selector": {
-            "metadata": "Fact_PL.Net Profit Margin Actual"
-          }
-        }
-      ],
-      "lineStyles": [
-        {
-          "properties": {
-            "strokeWidth": {
-              "expr": {
-                "Literal": {
-                  "Value": "3L"
-                }
-              }
-            },
-            "showMarker": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "markerSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "6D"
-                }
-              }
-            }
+            "metadata": "RF_IS.RF Chart Sales Reforecast"
           }
         }
       ],
@@ -181,14 +189,7 @@
             "position": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top'"
-                }
-              }
-            },
-            "showTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "'TopRight'"
                 }
               }
             }
@@ -198,17 +199,30 @@
       "valueAxis": [
         {
           "properties": {
-            "secStart": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "false"
                 }
               }
             },
-            "secEnd": {
+            "gridlineShow": {
               "expr": {
                 "Literal": {
-                  "Value": "0.25D"
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -216,6 +230,7 @@
         }
       ]
     },
+    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "title": [
         {
@@ -230,7 +245,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Sales (columns, CHF m) and net profit margin (line), FY2021–FY2024'"
+                  "Value": "'Sales, FY2021–FY2025 actual and FY2026 reforecast (CHF m)'"
                 }
               }
             },
@@ -261,8 +276,55 @@
             }
           }
         }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFCF4'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#63513D'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       ]
-    },
-    "drillFilterOtherVisuals": true
+    }
   }
 }

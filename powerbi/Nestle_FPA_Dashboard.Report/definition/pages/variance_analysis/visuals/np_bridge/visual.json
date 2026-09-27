@@ -192,37 +192,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cf39d427a431d326c108",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_LineItem"
-              }
-            },
-            "Property": "LineItem"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "7638ac3264721dca7e10",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_PL"
-              }
-            },
-            "Property": "Net Profit Bridge"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

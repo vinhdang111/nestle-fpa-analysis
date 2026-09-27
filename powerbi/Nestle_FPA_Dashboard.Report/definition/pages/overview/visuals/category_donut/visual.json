@@ -153,37 +153,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e6c90c90476b6203ea06",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Category"
-              }
-            },
-            "Property": "Category"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "6a37a4c5222342595c81",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Category"
-              }
-            },
-            "Property": "Category Sales (Selected Year)"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

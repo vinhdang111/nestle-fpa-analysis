@@ -142,23 +142,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cdf79410c63d8e321769",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Drivers"
-              }
-            },
-            "Property": "Drivers Worse than Adverse"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

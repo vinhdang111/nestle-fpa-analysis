@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "bt_card3",
+  "name": "kpi4_value",
   "position": {
-    "x": 669.17933130699089,
-    "y": 77.81155015197568,
-    "z": 4000,
-    "height": 108.93617021276596,
-    "width": 266.50455927051672,
-    "tabOrder": 4000
+    "x": 983,
+    "y": 78,
+    "z": 9000,
+    "height": 58,
+    "width": 131,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "card",
@@ -20,15 +20,15 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_Drivers"
+                      "Entity": "RF_IS"
                     }
                   },
-                  "Property": "Drivers Better than Favorable"
+                  "Property": "RF KPI EPS"
                 }
               },
-              "queryRef": "Fact_Drivers.Drivers Better than Favorable",
-              "nativeQueryRef": "Drivers Better than Favorable",
-              "displayName": "Better than Favorable"
+              "queryRef": "RF_IS.RF KPI EPS",
+              "nativeQueryRef": "RF KPI EPS",
+              "displayName": "EPS (CHF)"
             }
           ]
         }
@@ -41,7 +41,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "24D"
+                  "Value": "15D"
                 }
               }
             },
@@ -50,9 +50,16 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#6F8B4E'"
+                      "Value": "'#3A3027'"
                     }
                   }
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }
@@ -83,7 +90,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "9D"
                 }
               }
             }
@@ -107,7 +114,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FFFCF4'"
+                      "Value": "'#F3EFEA'"
                     }
                   }
                 }
@@ -131,7 +138,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#6F8B4E'"
+                      "Value": "'#63513D'"
                     }
                   }
                 }
@@ -142,5 +149,6 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "isHidden": true
 }

@@ -142,23 +142,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "40ba3880a9029c36adb9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Drivers"
-              }
-            },
-            "Property": "Drivers Within Range"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

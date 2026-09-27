@@ -151,51 +151,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cf8cfa1a39bee2a30ce7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_GrowthBridge"
-              }
-            },
-            "Property": "Period"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "577d839f58a8d4ee8053",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_GrowthBridge"
-              }
-            },
-            "Property": "Bridge Value FY25"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "7e805a75299b35a1a7c8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_GrowthBridge"
-              }
-            },
-            "Property": "Component"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
