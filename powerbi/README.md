@@ -1,14 +1,14 @@
 # Power BI Dashboard — Nestlé FY2025 Performance vs Budget
 
-A Power BI Project (`.pbip`) built on the Excel model in [`excel_model/`](../excel_model). The semantic model and report are stored as text files (TMDL + PBIR), so every measure, table and visual is reviewable on GitHub.
+A Power BI dashboard (`Nestle_FPA_Dashboard.pbix`) built on the Excel model in [`excel_model/`](../excel_model). The data, data model, DAX measures and report pages are all inside this one file.
 
 ## How to open
 
-1. Use an up-to-date **Power BI Desktop** (Windows).
-2. If your version asks for it, enable **File → Options and settings → Options → Preview features → "Power BI Project (.pbip) save option"** and **"Store reports using enhanced metadata format (PBIR)"**, then restart Power BI Desktop.
-3. Open **`Nestle_FPA_Dashboard.pbip`**.
-4. Click **Home → Refresh**. The data is embedded in the model definition, so no file paths or credentials are needed. A `.pbip` project doesn't store cached data, which is why a refresh is needed the first time.
-5. Optional: **File → Save as → `.pbix`** to get a single file for sharing or publishing to the Power BI Service.
+1. Download **`Nestle_FPA_Dashboard.pbix`**: click the file above, then the **Download raw file** button (top right of the file view).
+2. Open it in **Power BI Desktop** (free from Microsoft, Windows only).
+3. That's it: the data is stored inside the file, so the dashboard opens straight away. No refresh, file paths or credentials are needed.
+
+No Windows or Power BI Desktop? The same dashboard is published online: [open the live dashboard](https://app.powerbi.com/view?r=eyJrIjoiMGQwODRlMjEtNDY5Zi00M2MxLTgyYWUtZDEwZWM5OGY1ZmI1IiwidCI6Ijk2OTJhM2QzLTJhMDgtNGVjOC1hMGJkLTFkYjM1NWViNDIzMCIsImMiOjh9&pageName=overview) (no account needed).
 
 **Map:** the Zone map uses the built-in **Azure Maps** visual (File → Options → Security → "Use Azure Maps visual", on by default).
 
