@@ -2,7 +2,7 @@
 
 An end-to-end FP&A (Financial Planning & Analysis) portfolio project built on **Nestlé's real, publicly disclosed financials** — segment/category data foundation, a driver-based budget model with Adverse / Base / Favorable scenarios, actual-vs-budget variance analysis, an interactive dashboard, and an FY2026 reforecast with sensitivity analysis.
 
-**View online (no download needed):** [📊 Excel model in the browser](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/vinhdang111/nestle-fpa-analysis/main/excel_model/Nestle_FPA.xlsx) · [📈 Live Power BI dashboard](https://app.powerbi.com/view?r=eyJrIjoiMGQwODRlMjEtNDY5Zi00M2MxLTgyYWUtZDEwZWM5OGY1ZmI1IiwidCI6Ijk2OTJhM2QzLTJhMDgtNGVjOC1hMGJkLTFkYjM1NWViNDIzMCIsImMiOjh9&pageName=overview)
+**View online (no download needed):** [📊 Excel model in the browser](https://1drv.ms/x/c/973f61b692a0ccfd/IQBQ6uvh8BYdRbQtFCyFHUa8AWZwGTbxpPA89MPU3W_bEBs?e=ancLt6) · [📈 Live Power BI dashboard](https://app.powerbi.com/view?r=eyJrIjoiMGQwODRlMjEtNDY5Zi00M2MxLTgyYWUtZDEwZWM5OGY1ZmI1IiwidCI6Ijk2OTJhM2QzLTJhMDgtNGVjOC1hMGJkLTFkYjM1NWViNDIzMCIsImMiOjh9&pageName=overview)
 
 ## Why Nestlé
 
@@ -44,7 +44,7 @@ Original PDF copies of these documents are kept in [`data/raw/`](data/raw) for t
 
 ## Excel workbook — [`excel_model/Nestle_FPA.xlsx`](excel_model/Nestle_FPA.xlsx)
 
-[Open the workbook in the browser](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/vinhdang111/nestle-fpa-analysis/main/excel_model/Nestle_FPA.xlsx) (read-only view of every sheet, no download or Excel needed)
+[Open the workbook in the browser](https://1drv.ms/x/c/973f61b692a0ccfd/IQBQ6uvh8BYdRbQtFCyFHUa8AWZwGTbxpPA89MPU3W_bEBs?e=ancLt6) (read-only view of every sheet on OneDrive, no download or Excel needed)
 
 Sheets:
 
