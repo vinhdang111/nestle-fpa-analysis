@@ -2,7 +2,7 @@
 
 An end-to-end FP&A (Financial Planning & Analysis) portfolio project built on **Nestlé's real, publicly disclosed financials** — segment/category data foundation, a driver-based budget model with Adverse / Base / Favorable scenarios, actual-vs-budget variance analysis, an interactive dashboard, and an FY2026 reforecast with sensitivity analysis.
 
-**View online (no download needed):** [📊 Excel model in the browser](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/vinhdang111/nestle-fpa-analysis/main/excel_model/Nestle_Data_Foundation.xlsx) · [📈 Live Power BI dashboard](https://app.powerbi.com/view?r=eyJrIjoiMGQwODRlMjEtNDY5Zi00M2MxLTgyYWUtZDEwZWM5OGY1ZmI1IiwidCI6Ijk2OTJhM2QzLTJhMDgtNGVjOC1hMGJkLTFkYjM1NWViNDIzMCIsImMiOjh9&pageName=overview)
+**View online (no download needed):** [📊 Excel model in the browser](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/vinhdang111/nestle-fpa-analysis/main/excel_model/Nestle_FPA.xlsx) · [📈 Live Power BI dashboard](https://app.powerbi.com/view?r=eyJrIjoiMGQwODRlMjEtNDY5Zi00M2MxLTgyYWUtZDEwZWM5OGY1ZmI1IiwidCI6Ijk2OTJhM2QzLTJhMDgtNGVjOC1hMGJkLTFkYjM1NWViNDIzMCIsImMiOjh9&pageName=overview)
 
 ## Why Nestlé
 
@@ -40,11 +40,11 @@ Original PDF copies of these documents are kept in [`data/raw/`](data/raw) for t
 |---|---|
 | [`data/raw/`](data/raw) | Raw source PDFs from Nestlé's Investor Relations site (press releases & full Financial Statements) used to build the Excel workbook — see Data sources above |
 | [`excel_model/`](excel_model) | Excel workbook — data foundation, full P&L/CF, FY2025 budget model and variance analysis |
-| [`powerbi/`](powerbi) | Power BI Project (`.pbip`): semantic model (TMDL) and report (PBIR) as text files, plus the exported data as CSV — see [`powerbi/README.md`](powerbi/README.md) |
+| [`powerbi/`](powerbi) | Power BI dashboard file (`Nestle_FPA_Dashboard.pbix`), plus the exported data as CSV — see [`powerbi/README.md`](powerbi/README.md) |
 
-## Excel workbook — [`excel_model/Nestle_Data_Foundation.xlsx`](excel_model/Nestle_Data_Foundation.xlsx)
+## Excel workbook — [`excel_model/Nestle_FPA.xlsx`](excel_model/Nestle_FPA.xlsx)
 
-[Open the workbook in the browser](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/vinhdang111/nestle-fpa-analysis/main/excel_model/Nestle_Data_Foundation.xlsx) (read-only view of every sheet, no download or Excel needed)
+[Open the workbook in the browser](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/vinhdang111/nestle-fpa-analysis/main/excel_model/Nestle_FPA.xlsx) (read-only view of every sheet, no download or Excel needed)
 
 Sheets:
 
@@ -79,7 +79,7 @@ Sheets:
 
 [Open the live dashboard](https://app.powerbi.com/view?r=eyJrIjoiMGQwODRlMjEtNDY5Zi00M2MxLTgyYWUtZDEwZWM5OGY1ZmI1IiwidCI6Ijk2OTJhM2QzLTJhMDgtNGVjOC1hMGJkLTFkYjM1NWViNDIzMCIsImMiOjh9&pageName=overview) (published to the web, no Power BI account needed)
 
-An interactive dashboard built on the Excel workbook above, saved as a Power BI Project (`.pbip`) so every table, DAX measure and visual is stored as reviewable text. To open it, use Power BI Desktop: open `powerbi/Nestle_FPA_Dashboard.pbip`, then click **Refresh** (the data is embedded in the model, so no file paths or credentials are needed).
+An interactive dashboard built on the Excel workbook above, saved as a single Power BI file. To run it, download [`powerbi/Nestle_FPA_Dashboard.pbix`](powerbi/Nestle_FPA_Dashboard.pbix) and open it in Power BI Desktop (free, Windows). The data is stored inside the file, so it opens straight away: no refresh, file paths or credentials needed.
 
 | Page | What it shows |
 |---|---|
